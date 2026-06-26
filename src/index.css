@@ -1,0 +1,53 @@
+@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap');
+@import "tailwindcss";
+
+@theme {
+  --font-sans: "Outfit", ui-sans-serif, system-ui, sans-serif;
+  --font-mono: "JetBrains Mono", ui-monospace, SFMono-Regular, monospace;
+}
+
+@layer base {
+  body {
+    @apply bg-orange-50 text-slate-900 selection:bg-orange-200;
+  }
+}
+
+.prose {
+  @apply text-inherit;
+}
+.prose p {
+  @apply mb-4 last:mb-0;
+}
+.prose ul {
+  @apply list-disc ml-4 mb-4;
+}
+.prose ol {
+  @apply list-decimal ml-4 mb-4;
+}
+.prose h1, .prose h2, .prose h3 {
+  @apply font-bold mt-4 mb-2;
+}
+.prose code {
+  @apply bg-slate-100 px-1 rounded font-mono text-sm;
+}
+.prose-invert {
+  @apply text-white;
+}
+.prose-invert code {
+  @apply bg-white/20 text-white;
+}
+
+@layer utilities {
+  .glass {
+    @apply bg-white/70 backdrop-blur-md border border-white/20 shadow-xl;
+  }
+  .animate-float {
+    animation: float 6s ease-in-out infinite;
+  }
+}
+
+@keyframes float {
+  0% { transform: translateY(0px); }
+  50% { transform: translateY(-10px); }
+  100% { transform: translateY(0px); }
+}
